@@ -44,7 +44,7 @@ export const validateJwtToken = async (
     const { userId, role, exp } = (await jwt.verify(token, secret, {
       ignoreExpiration: true
     })) as { userId: string; role: Role; exp: number }
-    // if (exp < Date.now().valueOf() / 1000) return [false]
+    if (exp < Date.now().valueOf() / 1000) return [false]
     return [true, { userId, role }]
   } catch (err) {
     return [false]
