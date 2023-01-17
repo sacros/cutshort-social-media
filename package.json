@@ -1,0 +1,62 @@
+{
+  "name": "cutshort-social-media",
+  "version": "1.0.0",
+  "description": "Custshort social media app",
+  "main": "./dist/app.js",
+  "scripts": {
+    "init": "tsc --init",
+    "clean": "rimraf dist/",
+    "tslint": "tslint --project ./",
+    "prebuild": "npm run prettier-all && npm run tslint && npm run clean",
+    "prettier-all": "prettier --write 'src/**/*.+(ts|tsx|js|css|json)'",
+    "build": "rimraf dist && tsc",
+    "start": "node dist/app.js",
+    "watch": "tsc -w -p ./src -p ./tsconfig.json",
+    "dev": "ts-node src/app.ts"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "trailingComma": "none",
+    "printWidth": 80,
+    "tabWidth": 2,
+    "semi": false
+  },
+  "author": "sacros",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bcrypt": "^5.1.0",
+    "crypto-js": "^4.0.0",
+    "dotenv": "^8.2.0",
+    "firebase-admin": "^9.4.2",
+    "jsonwebtoken": "^9.0.0",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^10.0.0",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.32",
+    "mongoose": "^6.8.3",
+    "nanoid": "^3.0.0",
+    "ramda": "^0.27.1",
+    "rbac": "^5.0.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.5",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/bcrypt": "^5.0.0",
+    "@types/crypto-js": "^4.0.1",
+    "@types/koa": "^2.11.6",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-json": "^2.0.18",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.14.6",
+    "@types/ramda": "^0.27.36",
+    "@types/typescript": "^2.0.0",
+    "prettier": "^2.2.1",
+    "ts-lint": "^4.5.1",
+    "ts-node": "^10.8.1"
+  }
+}
